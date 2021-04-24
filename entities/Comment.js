@@ -10,4 +10,19 @@ class Comment {
 	}
 }
 
-export default Comment;
+class Comments {
+	constructor() {
+		this.comments = [];
+	}
+
+	CreateComment = ({ postId, name, email, body }) => {
+		const newComment = new Comment(postId, name, email, body);
+
+		this.comments.push(newComment);
+        console.log(this.comments)
+		return newComment;
+	};
+}
+
+const CommentInstance = new Comments();
+export default CommentInstance;

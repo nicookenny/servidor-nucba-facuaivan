@@ -8,5 +8,19 @@ class User {
 		this.email = email;
 	}
 }
+class Users {
+	constructor() {
+		this.users = [];
+	}
 
-export default User;
+	CreateUser = ({ name, username, email }) => {
+		const newUser = new User(name, username, email);
+
+		this.users.push(newUser);
+
+		return newUser;
+	};
+}
+
+const UserInstance = new Users();
+export default UserInstance;

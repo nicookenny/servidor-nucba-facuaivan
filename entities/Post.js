@@ -9,4 +9,18 @@ class Post {
 	}
 }
 
-export default Post;
+class Posts {
+	constructor() {
+		this.posts = [];
+	}
+
+	CreatePost = ({ userId, body, title }) => {
+		const newPost = new Post(userId, body, title);
+
+		this.posts.push(newPost);
+		return newPost;
+	};
+}
+
+const PostInstance = new Posts();
+export default PostInstance;
